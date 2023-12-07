@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pedido en línea</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Realizar Pedido en Línea</h1>
+    <form id="orderForm" onsubmit="event.preventDefault(); placeOrder();">
+      <label for="userName">Nombre:</label>
+      <input type="text" id="userName">
+
+      <label for="deliveryAddress">Dirección de entrega:</label>
+      <input type="text" id="deliveryAddress">
+
+      <label for="menuItems">Seleccionar artículos del menú:</label>
+      <select id="menuItems" multiple>
+        <!-- Aquí se generan dinámicamente las opciones del menú -->
+      </select>
+
+      <label for="quantity">Cantidad:</label>
+      <input type="number" id="quantity" min="1" value="1">
+
+      <label for="comments">Comentarios:</label>
+      <textarea id="comments" rows="4"></textarea>
+
+      <label for="contactInfo">Información de contacto:</label>
+      <input type="tel" id="phoneNumber" placeholder="Número de teléfono">
+      <input type="email" id="email" placeholder="Correo electrónico">
+
+      <p id="totalCost">Costo total: $0.00</p>
+
+      <button type="submit">Realizar Pedido</button>
+    </form>
+
+    <div id="orderConfirmation" class="hidden">
+      <!-- Aquí se mostrará la confirmación del pedido -->
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
